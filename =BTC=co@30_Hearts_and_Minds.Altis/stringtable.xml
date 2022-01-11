@@ -323,6 +323,13 @@
                 <Chinesesimp>&lt;&lt; 阵营设置 &gt;&gt;</Chinesesimp>
                 <French>&lt;&lt; Option de faction &gt;&gt;</French>
             </Key>
+            <Key ID="STR_BTC_HAM_PARAM_FAC_EAGRE">
+                <Original>Agression Level:</Original>
+                <German>Agression Level:</German>
+                <Portuguese>Agression Level:</Portuguese>
+                <Chinesesimp>Agression Level:</Chinesesimp>
+                <French>Niveau d'agression:</French>
+            </Key>
             <Key ID="STR_BTC_HAM_PARAM_FAC_ETYPE">
                 <Original>Enemy type:</Original>
                 <German>Feindliche Einheiten:</German>
