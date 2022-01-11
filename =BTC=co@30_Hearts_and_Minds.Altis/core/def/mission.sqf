@@ -23,6 +23,7 @@ private _p_en_AA = ("btc_p_AA" call BIS_fnc_getParamValue) isEqualTo 1;
 private _p_en_tank = ("btc_p_tank" call BIS_fnc_getParamValue) isEqualTo 1;
 private _p_civ = "btc_p_civ" call BIS_fnc_getParamValue;
 private _p_civ_veh = "btc_p_civ_veh" call BIS_fnc_getParamValue;
+private btc_p_agression = "btc_p_agression" call BIS_fnc_getParamValue;
 
 //<< IED options >>
 btc_p_ied = ("btc_p_ied" call BIS_fnc_getParamValue)/2;
@@ -661,11 +662,17 @@ switch (_p_en) do {
     case "OPF_G_F" : {
         btc_type_motorized = btc_type_motorized + ["I_Truck_02_transport_F", "I_Truck_02_covered_F"];
         btc_type_motorized_armed = btc_type_motorized_armed + ["I_Heli_light_03_F"];
-    };
-    case "IND_C_F" : {
-        btc_type_motorized = btc_type_motorized + ["I_G_Offroad_01_repair_F", "I_G_Offroad_01_F", "I_G_Quadbike_01_F", "I_G_Van_01_fuel_F", "I_Truck_02_transport_F", "I_Truck_02_covered_F"];
-        btc_type_motorized_armed = btc_type_motorized_armed + ["I_Heli_light_03_F", "I_G_Offroad_01_F"];
-        btc_type_units = btc_type_units - ["I_C_Soldier_Camo_F"];
+
+        // Agression level
+        switch (btc_p_agression) do {
+            case 0: { 
+                // Add or remove units based on agression level
+                btc_type_motorized = btc_type_motorized - ["I_Heli_light_03_F"];
+            };
+            case 1: { 
+                btc_type_motorized = btc_type_motorized + ["LOP_US_ZSU234"];
+            };
+        };
     };
 };
 
