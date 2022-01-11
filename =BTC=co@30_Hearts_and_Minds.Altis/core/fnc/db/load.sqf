@@ -227,3 +227,8 @@ private _markers_properties = +(profileNamespace getVariable [format ["btc_hm_%1
         _marker setMarkerPolyline _markerPolyline;
     };
 } forEach _markers_properties;
+
+//Limited Arsenal
+private _arsenalData = +(profileNamespace getVariable [format ["btc_hm_%1_arsenal", _name], []]);
+private _arsenal = missionNamespace getVariable "btc_limited_arsenal";
+_arsenal setVariable ["jna_dataList", _arsenalData];

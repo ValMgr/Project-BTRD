@@ -217,6 +217,11 @@ private _markers_properties = _player_markers apply {
 };
 profileNamespace setVariable [format ["btc_hm_%1_markers", _name], +_markers_properties];
 
+//Limited Arsenal
+private _arsenal = missionNamespace getVariable "btc_limited_arsenal";
+private _arsenalData = _arsenal getVariable "jna_dataList";
+profileNamespace setVariable [format ["btc_hm_%1_arsenal", _name], +_arsenalData];
+
 //End
 profileNamespace setVariable [format ["btc_hm_%1_db", _name], true];
 saveProfileNamespace;

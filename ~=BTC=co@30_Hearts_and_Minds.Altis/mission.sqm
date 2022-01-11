@@ -16,14 +16,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8275.0039,90.703697,10058.739};
-		dir[]={0.83005142,-0.3023259,0.46877658};
-		up[]={0.26327917,0.95318592,0.14868717};
-		aside[]={0.49178731,5.7346188e-007,-0.87079543};
+		pos[]={8294.0654,94.451408,10065.382};
+		dir[]={0.69142073,-0.68985146,0.21478477};
+		up[]={0.65886319,0.72388488,0.2046715};
+		aside[]={0.29667336,-5.0175004e-007,-0.95502037};
 	};
 };
 binarizationWanted=0;
-sourceName="=BTC=co@30_Hearts_and_Minds";
+sourceName="~=BTC=co@30_Hearts_and_Minds";
 addons[]=
 {
 	"A3_Ui_F",
@@ -1208,14 +1208,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8260.958,78.635765,10062.399};
-				angles[]={0.14562786,0,0.070549726};
+				position[]={8255.6289,55.908749,9942.9063};
 			};
 			name="btc_curator";
 			init="this addEventHandler ['CuratorObjectPlaced',{_this call btc_fnc_eh_CuratorObjectPlaced}];";
 			id=71;
 			type="ModuleCurator_F";
-			atlOffset=-7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2887,8 +2885,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8295.166,78.479378,10052.533};
-				angles[]={-0,5.7184839,0};
+				position[]={8295.166,78.402374,10052.533};
+				angles[]={0,5.7184839,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2900,6 +2898,7 @@ class Mission
 			};
 			id=170;
 			type="B_APC_Wheeled_01_cannon_F";
+			atlOffset=-0.077003479;
 			class CustomAttributes
 			{
 				class Attribute0
