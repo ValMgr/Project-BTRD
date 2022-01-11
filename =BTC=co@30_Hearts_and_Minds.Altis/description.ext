@@ -30,6 +30,9 @@ class RscTitles {
 class CfgFunctions {
     #include "core\fnc\eh\functions.hpp"
     // add your own functions below
+
+    // JN Arsenal - limited arsenal
+    #include "core\fnc\limited_arsenal\functions.hpp"
 };
 
 // CBA XEH

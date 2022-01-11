@@ -247,7 +247,7 @@ btc_fnc_patrol_disabled = compile preprocessFileLineNumbers "core\fnc\patrol\dis
 btc_fnc_rep_hd = compile preprocessFileLineNumbers "core\fnc\rep\hd.sqf";
 btc_fnc_rep_suppressed = compile preprocessFileLineNumbers "core\fnc\rep\suppressed.sqf";
 
-//ARSENAL
+//ARSENALpreprocessFileLineNumbers
 btc_fnc_arsenal_ammoUsage = compile preprocessFileLineNumbers "core\fnc\arsenal\ammoUsage.sqf";
 
 /////////////////////CLIENT\\\\\\\\\\\\\\\\\\\\\

@@ -23,7 +23,7 @@ private _p_en_AA = ("btc_p_AA" call BIS_fnc_getParamValue) isEqualTo 1;
 private _p_en_tank = ("btc_p_tank" call BIS_fnc_getParamValue) isEqualTo 1;
 private _p_civ = "btc_p_civ" call BIS_fnc_getParamValue;
 private _p_civ_veh = "btc_p_civ_veh" call BIS_fnc_getParamValue;
-private btc_p_agression = "btc_p_agression" call BIS_fnc_getParamValue;
+btc_p_agression = "btc_p_agression" call BIS_fnc_getParamValue;
 
 //<< IED options >>
 btc_p_ied = ("btc_p_ied" call BIS_fnc_getParamValue)/2;
