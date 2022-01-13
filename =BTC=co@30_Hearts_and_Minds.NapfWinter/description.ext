@@ -1,8 +1,8 @@
 
-loadScreen = "core\img\bnch.paa";
-author = "ZartaK40";
-onLoadName = $STR_BTC_HAM_DESCR_NAME;
-onLoadMission = $STR_BTC_HAM_DESCR_MISSION;
+loadScreen = "core\img\btrd.paa";
+author = "ZartaK40, NeoGold, Halvard";
+onLoadName = "LES BTRD FONT DU SKI";
+onLoadMission = "Dev: Arsenal, IA";
 enabledebugconsole = 1;
 
 #include "core\fnc\common\dlg.hpp"
