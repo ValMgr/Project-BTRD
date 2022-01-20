@@ -450,7 +450,7 @@ if (isServer) then {
             "FOB",
             "Decontamination",
             "Vehicle Logistic"
-        ] + (_rearming_vehicles apply {getText (_cfgVehicles >> _x >> "displayName")}),
+        ],
         [
             [
                 //"Fortifications"
@@ -508,8 +508,13 @@ if (isServer) then {
                 "ACE_Wheel",
                 "ACE_Track"
             ]
-        ] + _rearming_magazines
+        ] // _rearming_magazines
     ];
+    // doesnt work cause server side
+    // if((call BIS_fnc_admin) == 2 || !isMultiplayer) then {
+    //     btc_construction_array select 0 append (_rearming_vehicles apply {getText (_cfgVehicles >> _x >> "displayName")});
+    //     btc_construction_array select 1 append _rearming_magazines;
+    // };
     publicVariable "btc_construction_array";
 };
 
@@ -710,3 +715,9 @@ btc_AI_skill = _p_skill;
 btc_units_owners = [];
 
 btc_player_type = ["SoldierWB", "SoldierEB", "SoldierGB"] select ([west, east, independent] find btc_player_side);
+
+// Limited arsenal
+btc_limited_arsenal = missionNamespace getVariable ['btc_limited_arsenal', objNull];
+if(!isNull btc_limited_arsenal) then {
+    btc_limited_arsenal call jn_fnc_arsenal_init;
+}
