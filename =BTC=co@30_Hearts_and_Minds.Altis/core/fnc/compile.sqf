@@ -362,6 +362,9 @@ if (!isDedicated) then {
     btc_fnc_tow_unhook = compile preprocessFileLineNumbers "core\fnc\tow\unhook.sqf";
     btc_fnc_tow_unwind = compile preprocessFileLineNumbers "core\fnc\tow\unwind.sqf";
     btc_fnc_tow_check = compile preprocessFileLineNumbers "core\fnc\tow\check.sqf";
+
+    //HOSPITAL
+    btc_fnc_hospital_heal = compile preprocessFileLineNumbers "core\fnc\hospital\heal.sqf";
 };
 
 /////////////////////HEADLESS\\\\\\\\\\\\\\\\\\\\\

@@ -717,7 +717,15 @@ btc_units_owners = [];
 btc_player_type = ["SoldierWB", "SoldierEB", "SoldierGB"] select ([west, east, independent] find btc_player_side);
 
 // Limited arsenal
-btc_limited_arsenal = missionNamespace getVariable ['btc_limited_arsenal', objNull];
 if(!isNull btc_limited_arsenal) then {
     btc_limited_arsenal call jn_fnc_arsenal_init;
-}
+};
+
+
+// Hospital
+if(!isNull btc_hospital) then {
+    [btc_hospital, false] call ace_dragging_fnc_setDraggable;
+    [btc_hospital, false] call ace_dragging_fnc_setCarryable;
+    [btc_hospital, -1] call ace_cargo_fnc_setSize;
+    [btc_hospital, -1] call ace_cargo_fnc_setSpace;
+};
