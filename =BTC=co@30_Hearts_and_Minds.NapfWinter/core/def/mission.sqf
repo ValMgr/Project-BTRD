@@ -510,11 +510,6 @@ if (isServer) then {
             ]
         ] // _rearming_magazines
     ];
-    // doesnt work cause server side
-    // if((call BIS_fnc_admin) == 2 || !isMultiplayer) then {
-    //     btc_construction_array select 0 append (_rearming_vehicles apply {getText (_cfgVehicles >> _x >> "displayName")});
-    //     btc_construction_array select 1 append _rearming_magazines;
-    // };
     publicVariable "btc_construction_array";
 };
 
@@ -637,7 +632,7 @@ btc_lift_HUD_y  = 0.848;
 btc_hq = objNull;
 // Get all faction from mod there are currently running
 //copyToClipboard str (["EN"] call btc_fnc_get_class);
-private _allfaction = ["CSLA","FIA","US85","AFR_ARMY","ARA_ARMY","ARL_ARMY","IND_F","OPF_F","OPF_G_F","IND_G_F","BLU_G_F","BLU_F","IND_C_F","IND_E_F","IND_L_F","CEC_ARMY","CFP_B_CAF","CFP_O_IQARMY","CFP_B_ILIDF","CFP_B_NAARMY","CFP_O_SDMILITIA","CFP_O_ABUSAYYAF","CFP_B_AFGPOLICE","CFP_O_ALQAEDA","CFP_I_ALNUSRA","CFP_O_ALSHABAAB","CFP_O_BOKOHARAM","CFP_O_CFREBELS","CFP_O_HAMAS","CFP_O_HEZBOLLAH","CFP_B_IQARMY","CFP_B_IQPOLICE","CFP_O_IRARMY","CFP_O_IS","CFP_I_IS","CFP_B_KEARMY","CFP_B_MLARMY","CFP_B_PESH","CFP_O_SOREBEL","CFP_I_SSARMY","CFP_O_SSREBELS","CFP_I_SDREBELS","CFP_I_SDREBELSRF","CFP_O_SDARMY","CFP_O_SYARMY","CFP_O_TBAN","CFP_I_TUAREG","CFP_B_UGARMY","CFP_B_USRANGERS_WDL","CFP_B_USSEALS_DES","CFP_B_USSEALS_WDL","CFP_B_YPG","CFP_O_ANSARALLAH","CFP_B_CZARMY_WDL","CFP_I_WESTULTRA","CUP_B_CZ","CUP_B_GB","CUP_B_CDF","CUP_O_CHDKZ","CUP_STATIC_SHIPS","CUP_I_NAPA","CUP_I_RACS","CUP_B_RNZN","CUP_O_RU","CUP_O_SLA","CUP_O_TK","CUP_O_TK_MILITIA","CUP_I_UN","CUP_B_US_ARMY","CUP_B_USMC","CUP_B_GER","CUP_B_HIL","CUP_I_PMC_ION","CFP_B_GBARMY_WDL","CFP_B_DEARMY_WDL","CFP_O_RUARMY_DES","CUP_I_TK_GUE","CFP_B_USMC_DES","CFP_B_CDF_SNW","CFP_O_WAGNER","CFP_I_WAGNER","CFP_O_WAGNER_WIN","CFP_I_WAGNER_WIN","CFP_O_WAGNER_WDL","CFP_I_WAGNER_WDL","CFP_B_USARMY_1991_DES","CFP_B_USARMY_1991_WDL","CFP_B_USARMY_2003_DES","CFP_B_USARMY_2003_WDL","CFP_O_RUMVD","CFP_B_USCIA","CFP_B_USARMY_WDL","CFP_B_AFARMY","CFP_O_CHDKZ_SNW","CWR3_FACTION_FIA","CWR3_FACTION_RUS","CWR3_FACTION_USA","OPF_R_F","BLU_CTRG_F","OPF_GEN_F","BLU_GEN_F","BLU_T_F","CFP_O_NKARMY","FAP_ARMY","FOW_HEER","FOW_IJA_NAS","FOW_UK_FAA","FOW_USA_NAVY","FOW_WAFFENSS","FOW_AUS","FOW_LUFTWAFFE","FOW_HI","FOW_UK","FOW_USA_P","FOW_IJA","FOW_USA","FOW_USMC","GAL_ARMY","GANGBLUE_ARMY","GANGRED_ARMY","GM_FC_DK","GM_FC_GC_BGS","GM_FC_GC","GM_FC_PL","GM_FC_GE_BGS","GM_FC_GE","O_TALIBAN","IBR_ZETABORN_FACTION","IBR_ROBOTFAC","LIB_RKKA_W","LIB_WEHRMACHT_W","LIB_ARR","LIB_MKHL","LIB_RBAF","LIB_ACI","LIB_GUER","LIB_RAAF","LIB_RKKA","LIB_WEHRMACHT","LIB_US_101AB","LIB_US_82AB","LIB_UK_AB_W","LIB_UK_ARMY_W","LIB_US_ARMY_W","LIB_FSJ","LIB_UK_AB","LIB_UK_ARMY","LIB_UK_DR","LIB_US_ARMY","LIB_DAK","LIB_NKVD","LIB_US_RANGERS","LIB_NAC","LIB_FFI","BLU_UN_LXWS","BLU_W_F","MOL_ARMY","OPF_T_F","OPTRE_PD","OPTRE_FC_COVENANT","OPTRE_INS","OPTRE_UNSC","RHS_FACTION_VMF","RHS_FACTION_MSV","RHS_FACTION_RVA","RHS_FACTION_TV","RHS_FACTION_VDV","RHS_FACTION_VPVO","RHS_FACTION_VV","RHS_FACTION_VVS_C","RHS_FACTION_VVS","RHSGREF_FACTION_CDF_AIR_B","RHSGREF_FACTION_CDF_AIR","RHSSAF_FACTION_ARMY","RHSSAF_FACTION_ARMY_OPFOR","RHSSAF_FACTION_AIRFORCE_OPFOR","RHSSAF_FACTION_AIRFORCE","RHSSAF_FACTION_UN","RHS_FACTION_USARMY_D","RHS_FACTION_USARMY_WD","RHS_FACTION_USN","RHS_FACTION_SOCOM","RHS_FACTION_USAF","RHS_FACTION_USMC_D","RHS_FACTION_USMC_WD","RHSGREF_FACTION_UN","RHSGREF_FACTION_NATIONALIST","RHSGREF_FACTION_TLA","RHSGREF_FACTION_TLA_G","RHSGREF_FACTION_CDF_GROUND","RHSGREF_FACTION_CDF_GROUND_B","I_ARVN","B_MACV","O_PAVN","O_VC","SG_STURM","SG_STURMPANZER","UK3CB_AAF_O","UK3CB_AAF_I","UK3CB_AAF_B","UK3CB_ANA_B","UK3CB_ANP_B","UK3CB_ADA_O","UK3CB_ADA_I","UK3CB_ADA_B","UK3CB_ADR_O","UK3CB_ADR_I","UK3CB_ADR_B","UK3CB_ADG_O","UK3CB_ADG_I","UK3CB_ADG_B","UK3CB_ADC_O","UK3CB_ADC_I","UK3CB_ADC_B","UK3CB_ADE_O","UK3CB_ADE_I","UK3CB_ADM_O","UK3CB_ADM_I","UK3CB_ADM_B","UK3CB_ADP_O","UK3CB_ADP_I","UK3CB_ADP_B","UK3CB_ARD_O","UK3CB_ARD_I","UK3CB_ARD_B","UK3CB_CHD_O","UK3CB_CHD_W_O","UK3CB_CHD_B","UK3CB_CHD_W_B","UK3CB_CHD_I","UK3CB_CHD_W_I","UK3CB_CHC_O","UK3CB_CHC_I","UK3CB_CHC_B","UK3CB_CCM_O","UK3CB_CCM_B","UK3CB_CCM_I","UK3CB_CPD_O","UK3CB_CPD_I","UK3CB_CPD_B","UK3CB_CW_US_B_EARLY","UK3CB_CW_US_B_LATE","UK3CB_CW_SOV_O_EARLY","UK3CB_CW_SOV_O_LATE","UK3CB_KDF_O","UK3CB_KDF_I","UK3CB_KDF_B","UK3CB_MDF_O","UK3CB_MDF_I","UK3CB_MDF_B","UK3CB_NAP_O","UK3CB_NAP_I","UK3CB_NAP_B","UK3CB_NFA_O","UK3CB_NFA_I","UK3CB_NFA_B","UK3CB_NPD_O","UK3CB_NPD_I","UK3CB_NPD_B","UK3CB_TKC_O","UK3CB_TKC_I","UK3CB_TKC_B","UK3CB_TKM_O","UK3CB_TKA_O","UK3CB_TKA_I","UK3CB_TKA_B","UK3CB_TKP_O","UK3CB_TKP_I","UK3CB_TKP_B","UK3CB_TKM_B","UK3CB_TKM_I","UK3CB_UN_I","UK3CB_UN_B","RHSGREF_FACTION_CDF_NG","RHSGREF_FACTION_CDF_NG_B","RHSGREF_FACTION_CHDKZ","RHSGREF_FACTION_CHDKZ_G","RHSGREF_FACTION_HIDF","UNSUNG_G","UNSUNG_AUS","UNSUNG_NZ","UNSUNG_ROK","UNSUNG_W","UNSUNG_EV","UNSUNG_E","BLU_ION_LXWS","BLU_NATO_LXWS","OPF_SFIA_LXWS","OPF_TURA_LXWS","IND_TURA_LXWS","BLU_TURA_LXWS"]; //All factions
+private _allfaction = ["IND_F","OPF_F","OPF_G_F","IND_G_F","BLU_G_F","IND_E_F","BLU_F","IND_L_F","IND_C_F","CHA_USMC","OPF_R_F","OPF_T_F","BLU_CTRG_F","OPF_GEN_F","BLU_GEN_F","BLU_T_F","LOP_AA","LOP_AFR_OPF","LOP_AFR","LOP_BH","LOP_CDF","LOP_CHDKZ","LOP_NAPA","LOP_GRE","LOP_IRAN","LOP_IA","LOP_IRA","LOP_ISTS_OPF","LOP_ISTS","LOP_NK","LOP_PESH_IND","LOP_PESH","LOP_AM_OPF","LOP_AM","LOP_PMC","LOP_RACS","LOP_SLA","LOP_SYR","LOP_TKA","LOP_TRK","LOP_UKR","LOP_UVF","LOP_UA","LOP_US","LOP_UN","BLU_W_F","RHS_FACTION_VMF","RHS_FACTION_MSV","RHS_FACTION_RVA","RHS_FACTION_TV","RHS_FACTION_VDV","RHS_FACTION_VPVO","RHS_FACTION_VV","RHS_FACTION_VVS_C","RHS_FACTION_VVS","RHSGREF_FACTION_CDF_AIR_B","RHSGREF_FACTION_CDF_GROUND","RHSGREF_FACTION_CDF_GROUND_B","RHSGREF_FACTION_CDF_NG","RHSGREF_FACTION_CDF_NG_B","RHSGREF_FACTION_CDF_AIR","RHSSAF_FACTION_ARMY","RHSSAF_FACTION_UN","RHSSAF_FACTION_ARMY_OPFOR","RHSSAF_FACTION_AIRFORCE_OPFOR","RHSSAF_FACTION_AIRFORCE","RHS_FACTION_USARMY_D","RHS_FACTION_USARMY_WD","RHS_FACTION_USN","RHS_FACTION_SOCOM","RHS_FACTION_USAF","RHS_FACTION_USMC_D","RHS_FACTION_USMC_WD","RHSGREF_FACTION_HIDF","RHSGREF_FACTION_UN","RHSGREF_FACTION_CHDKZ","RHSGREF_FACTION_CHDKZ_G","RHSGREF_FACTION_NATIONALIST","RHSGREF_FACTION_TLA","RHSGREF_FACTION_TLA_G"]; //All factions
 _p_en = _allfaction select _p_en; //Select faction selected from mission parameter
 _allclasse = [[_p_en], _p_en_AA, _p_en_tank] call btc_fnc_mil_class; //Create classes from factions, you can combine factions like that: [[_p_en , "IND_F"], _p_en_AA, _p_en_tank] call btc_fnc_mil_class;
 
@@ -655,15 +650,6 @@ btc_type_gl = _allclasse select 8;
 //Sometimes you need to remove units: - ["Blabla","moreBlabla"];
 //Sometimes you need to add units: + ["Blabla","moreBlabla"];
 switch (_p_en) do {
-    /*case "Myfactionexemple" : {
-        btc_type_units = btc_type_units - ["Blabla","moreBlabla"];
-        btc_type_divers = btc_type_divers + ["Blabla","moreBlabla"];
-        btc_type_crewmen = "Blabla";
-        btc_type_boats = btc_type_boats;
-        btc_type_motorized = btc_type_motorized;
-        btc_type_mg = btc_type_mg;
-        btc_type_gl = btc_type_gl;
-    };*/
     case "OPF_G_F" : {
         btc_type_motorized = btc_type_motorized + ["I_Truck_02_transport_F", "I_Truck_02_covered_F"];
         btc_type_motorized_armed = btc_type_motorized_armed + ["I_Heli_light_03_F"];
@@ -679,6 +665,53 @@ switch (_p_en) do {
             };
         };
     };
+    case "LOP_US" : {
+        switch (btc_p_agression) do {
+            case 0: {
+                private _vhl_removed = ["LOP_US_BTR60","LOP_US_BTR70","LOP_US_ZSU234","LOP_US_BMP1","LOP_US_BMP1D","LOP_US_BMP2",
+                "LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
+
+                btc_type_motorized = btc_type_motorized - _vhl_removed;
+                btc_type_motorized_armed = btc_type_motorized - _vhl_removed;
+            };
+            case 1: {
+                private _vhl_removed = ["LOP_US_BTR60","LOP_US_BTR70","LOP_US_ZSU234","LOP_US_BMP1","LOP_US_BMP1D","LOP_US_BMP2",
+                "LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv"];
+
+                btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
+                btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
+            };
+            case 2: {
+                private _vhl_removed = ["LOP_US_ZSU234","LOP_US_BMP1","LOP_US_BMP1D","LOP_US_BMP2",
+                "LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv"];
+
+                btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
+                btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
+            };
+            case 3: {
+                private _vhl_removed = ["LOP_US_BMP2","LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_ATGM_msv","rhsgref_BRDM2_msv"];
+
+                btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
+                btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
+            };
+            case 4: {
+                private _vhl_removed = ["LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi8AMTSh_vvsc"];
+
+                btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
+                btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
+            };
+            case 5: {
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi8AMTSh_vvsc"];
+
+                btc_type_motorized = btc_type_motorized + _vhl_added;
+                btc_type_motorized_armed = btc_type_motorized + _vh_added;
+            };
+        };
+    };
 };
 
 //Chem
@@ -690,23 +723,23 @@ btc_spect_updateOn = -1;
 
 //Rep
 btc_rep_bonus_cache = 100;
-btc_rep_bonus_civ_hh = 3;
-btc_rep_bonus_disarm = 15;
+btc_rep_bonus_civ_hh = 5;
+btc_rep_bonus_disarm = 20;
 btc_rep_bonus_hideout = 200;
-btc_rep_bonus_mil_killed = 0.25;
+btc_rep_bonus_mil_killed = 0.35;
 btc_rep_bonus_IEDCleanUp = 10;
-btc_rep_bonus_removeTag = 3;
-btc_rep_bonus_removeTagLetter = 0.5;
+btc_rep_bonus_removeTag = 4;
+btc_rep_bonus_removeTagLetter = 1;
 
 btc_rep_malus_civ_hd = - 2;
 btc_rep_malus_animal_hd = - 1;
-btc_rep_malus_civ_killed = - 10;
+btc_rep_malus_civ_killed = - 50;
 btc_rep_malus_animal_killed = - 5;
-btc_rep_malus_civ_suppressed = - 4;
-btc_rep_malus_player_respawn = - 10;
-btc_rep_malus_veh_killed = - 25;
-btc_rep_malus_building_damaged = - 2.5;
-btc_rep_malus_building_destroyed = - 5;
+btc_rep_malus_civ_suppressed = - 2;
+btc_rep_malus_player_respawn = - 20;
+btc_rep_malus_veh_killed = - 30;
+btc_rep_malus_building_damaged = - 1.5;
+btc_rep_malus_building_destroyed = - 10;
 
 //Skill
 btc_AI_skill = _p_skill;
