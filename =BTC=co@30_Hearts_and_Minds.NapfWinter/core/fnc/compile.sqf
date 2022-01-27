@@ -411,21 +411,18 @@ if (!isDedicated) then {
     btc_task_fnc_abort = compileScript ["core\fnc\task\abort.sqf"];
 
     //TOW
-<<<<<<< HEAD:=BTC=co@30_Hearts_and_Minds.NapfWinter/core/fnc/compile.sqf
     btc_fnc_tow_ropeCreate = compile preprocessFileLineNumbers "core\fnc\tow\ropeCreate.sqf";
     btc_fnc_tow_hitch_points = compile preprocessFileLineNumbers "core\fnc\tow\hitch_points.sqf";
     btc_fnc_tow_unhook = compile preprocessFileLineNumbers "core\fnc\tow\unhook.sqf";
     btc_fnc_tow_unwind = compile preprocessFileLineNumbers "core\fnc\tow\unwind.sqf";
     btc_fnc_tow_check = compile preprocessFileLineNumbers "core\fnc\tow\check.sqf";
-
-    //HOSPITAL
-    btc_fnc_hospital_heal = compile preprocessFileLineNumbers "core\fnc\hospital\heal.sqf";
-=======
     btc_tow_fnc_ropeCreate = compileScript ["core\fnc\tow\ropeCreate.sqf"];
     btc_tow_fnc_hitch_points = compileScript ["core\fnc\tow\hitch_points.sqf"];
     btc_tow_fnc_unhook = compileScript ["core\fnc\tow\unhook.sqf"];
     btc_tow_fnc_check = compileScript ["core\fnc\tow\check.sqf"];
->>>>>>> 036ffa1a73274858d5769abde5f6012ac21ea3b3:=BTC=co@30_Hearts_and_Minds.Altis/core/fnc/compile.sqf
+    
+    //HOSPITAL
+    btc_fnc_hospital_heal = compile preprocessFileLineNumbers "core\fnc\hospital\heal.sqf";
 };
 
 /////////////////////HEADLESS\\\\\\\\\\\\\\\\\\\\\

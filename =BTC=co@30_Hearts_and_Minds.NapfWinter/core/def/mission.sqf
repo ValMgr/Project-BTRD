@@ -501,82 +501,7 @@ btc_construction_array =
 
         ] + btc_containers_mat,
         [
-            "Fortifications",
-            "Static",
-            "Ammobox",
-            "Containers",
-            "Supplies",
-            "FOB",
-            "Decontamination",
-            "Vehicle Logistic"
-        ],
-        [
-            [
-                //"Fortifications"
-                "Land_BagBunker_Small_F",
-                "Land_BagFence_Corner_F",
-                "Land_BagFence_End_F",
-                "Land_BagFence_Long_F",
-                "Land_BagFence_Round_F",
-                "Land_BagFence_Short_F",
-                "Land_HBarrier_1_F",
-                "Land_HBarrier_3_F",
-                "Land_HBarrier_5_F",
-                "Land_HBarrierBig_F",
-                "Land_Razorwire_F",
-                "Land_CncBarrier_F",
-                "Land_CncBarrierMedium_F",
-                "Land_CncBarrierMedium4_F",
-                "Land_CncWall1_F",
-                "Land_CncWall4_F",
-                "Land_Mil_ConcreteWall_F",
-                "Land_Mil_WallBig_4m_F",
-                "Land_Mil_WallBig_Corner_F",
-                "Land_PortableLight_double_F",
-                "Land_Pod_Heli_Transport_04_medevac_black_F",
-                "B_Slingload_01_Fuel_F"
-            ],
-            _rearming_static + _magazines_static,
-            [
-                //"Ammobox"
-                "Land_WoodenBox_F"
-
-            ] + (_allClassSorted select {
-                _x isKindOf "ReammoBox_F" &&
-                {!(_x isKindOf "Slingload_01_Base_F")} &&
-                {!(_x isKindOf "Pod_Heli_Transport_04_base_F")}
-            }),
-            [
-                //"Containers"
-
-            ] + btc_containers_mat,
-            [
-                //"Supplies"
-                btc_supplies_cargo
-            ],
-            [
-                //"FOB"
-                btc_fob_mat
-            ],
-            [
-                //"Decontamination"
-                "DeconShower_01_F"
-            ],
-            [
-                //"Vehicle logistic"
-                "ACE_Wheel",
-                "ACE_Track"
-            ]
-        ] // _rearming_magazines
-    ];
-    // doesnt work cause server side
-    // if((call BIS_fnc_admin) == 2 || !isMultiplayer) then {
-    //     btc_construction_array select 0 append (_rearming_vehicles apply {getText (_cfgVehicles >> _x >> "displayName")});
-    //     btc_construction_array select 1 append _rearming_magazines;
-    // };
-    publicVariable "btc_construction_array";
-};
-        //"Supplies"
+            //"Supplies"
             btc_supplies_cargo
         ],
         [
@@ -767,7 +692,6 @@ if(!isNull btc_hospital) then {
     [btc_hospital, -1] call ace_cargo_fnc_setSize;
     [btc_hospital, -1] call ace_cargo_fnc_setSpace;
 };
-
 //Door
 btc_door_breaking_time = 60;
 
