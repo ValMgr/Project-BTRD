@@ -247,7 +247,7 @@ btc_fnc_patrol_disabled = compile preprocessFileLineNumbers "core\fnc\patrol\dis
 btc_fnc_rep_hd = compile preprocessFileLineNumbers "core\fnc\rep\hd.sqf";
 btc_fnc_rep_suppressed = compile preprocessFileLineNumbers "core\fnc\rep\suppressed.sqf";
 
-//ARSENALpreprocessFileLineNumbers
+//ARSENAL
 btc_fnc_arsenal_ammoUsage = compile preprocessFileLineNumbers "core\fnc\arsenal\ammoUsage.sqf";
 
 /////////////////////CLIENT\\\\\\\\\\\\\\\\\\\\\
@@ -362,6 +362,9 @@ if (!isDedicated) then {
     btc_fnc_tow_unhook = compile preprocessFileLineNumbers "core\fnc\tow\unhook.sqf";
     btc_fnc_tow_unwind = compile preprocessFileLineNumbers "core\fnc\tow\unwind.sqf";
     btc_fnc_tow_check = compile preprocessFileLineNumbers "core\fnc\tow\check.sqf";
+
+    //HOSPITAL
+    btc_fnc_hospital_heal = compile preprocessFileLineNumbers "core\fnc\hospital\heal.sqf";
 };
 
 /////////////////////HEADLESS\\\\\\\\\\\\\\\\\\\\\

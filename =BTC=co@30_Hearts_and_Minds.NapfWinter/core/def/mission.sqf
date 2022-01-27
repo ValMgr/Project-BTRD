@@ -450,7 +450,7 @@ if (isServer) then {
             "FOB",
             "Decontamination",
             "Vehicle Logistic"
-        ] + (_rearming_vehicles apply {getText (_cfgVehicles >> _x >> "displayName")}),
+        ],
         [
             [
                 //"Fortifications"
@@ -508,8 +508,13 @@ if (isServer) then {
                 "ACE_Wheel",
                 "ACE_Track"
             ]
-        ] + _rearming_magazines
+        ] // _rearming_magazines
     ];
+    // doesnt work cause server side
+    // if((call BIS_fnc_admin) == 2 || !isMultiplayer) then {
+    //     btc_construction_array select 0 append (_rearming_vehicles apply {getText (_cfgVehicles >> _x >> "displayName")});
+    //     btc_construction_array select 1 append _rearming_magazines;
+    // };
     publicVariable "btc_construction_array";
 };
 
@@ -710,3 +715,17 @@ btc_AI_skill = _p_skill;
 btc_units_owners = [];
 
 btc_player_type = ["SoldierWB", "SoldierEB", "SoldierGB"] select ([west, east, independent] find btc_player_side);
+
+// Limited arsenal
+if(!isNull btc_limited_arsenal) then {
+    btc_limited_arsenal call jn_fnc_arsenal_init;
+};
+
+
+// Hospital
+if(!isNull btc_hospital) then {
+    [btc_hospital, false] call ace_dragging_fnc_setDraggable;
+    [btc_hospital, false] call ace_dragging_fnc_setCarryable;
+    [btc_hospital, -1] call ace_cargo_fnc_setSize;
+    [btc_hospital, -1] call ace_cargo_fnc_setSpace;
+};
