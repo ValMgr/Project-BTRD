@@ -4,6 +4,19 @@ btc_custom_loc = [
     Possible types: "NameVillage","NameCity","NameCityCapital","NameLocal","Hill","Airport","NameMarine", "StrongpointArea", "BorderCrossing", "VegetationFir"
     EXAMPLE: [[13132.8,3315.07,0.00128174],"NameVillage","Mountain 1",800,true]
 */
+    [[13299,19610,40.2462],"VegetationFir","Ile1",300,true],
+    [[10664.9,17071.3,37.198],"NameVillage","Magden",300,true],
+    [[73679.01,15965.1,33.4916],"NameVillage","Wasen",300,true],
+    [[7316.39,15037.8,50.6677],"NameLocal","Local1",300,true],
+    [[8637.14,14034.2,62.6497],"NameVillage","Truebsal",300,true],
+    [[12556.7,14329.8,61.8285],"NameVillage","Bunig",300,true],
+    [[13634.6,13923.8,54.9378],"NameVillage","Malters",300,true],
+    [[5772.21,6583.53,73.0639],"VegetationFir","HeiligholzForest",300,true],
+    [[4490.61,4635.9,71.5743],"Airport","Airbase",300,true],
+    [[7441.29,3713.5,213.51],"VegetationFir","Forêt1",1000,true],
+    [[10589.8,4917.36,104.967],"NameLocal","Barrage1",300,true],
+    [[11910,5806.76,328.118],"Hill","Schrattenfluh",300,true],
+    [[12810.3,5284.39,232.585],"NameLocal","Local2",300,true]
 ];
 
 /*

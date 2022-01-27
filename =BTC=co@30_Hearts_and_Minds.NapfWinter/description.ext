@@ -1,7 +1,7 @@
 loadScreen = "core\img\btrd.paa";
-author = "ZartaK40, NeoGold, Halvard";
+author = "ZartaK40, NeoGold & les BTRD";
 onLoadName = "LES BTRD FONT DU SKI";
-onLoadMission = "Playtest 28/01/2022 - Tests de tout les aspects possible de la mission.";
+onLoadMission = "Playtest 28/01/2022 - Tests globaux.";
 enabledebugconsole = 1;
 
 #include "core\fnc\common\dlg.hpp"
