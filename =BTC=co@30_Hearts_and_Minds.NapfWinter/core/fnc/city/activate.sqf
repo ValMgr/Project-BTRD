@@ -189,7 +189,7 @@ if (btc_p_animals_group_ratio > 0) then {
 
 if (_city getVariable ["spawn_more", false]) then {
     _city setVariable ["spawn_more", false];
-    private _finalNumberOfGroup = _p_mil_group_ratio * 5;
+    private _finalNumberOfGroup = _p_mil_group_ratio * 6;
     private _numberOfHouseGroup = _finalNumberOfGroup * btc_p_mil_wp_houseDensity;
     for "_i" from 1 to round _finalNumberOfGroup do {
         [
@@ -326,7 +326,7 @@ if (_civKilled isNotEqualTo []) then {
 btc_patrol_active = btc_patrol_active - [grpNull];
 private _numberOfPatrol = count btc_patrol_active;
 if (_numberOfPatrol < _p_patrol_max) then {
-    private _min = [0, 1] select _has_en;
+    private _min = [0, 2] select _has_en;
     private _addMilPatrol = (_min + random 1) min (_p_patrol_max - _numberOfPatrol);
     for "_i" from 1 to round _addMilPatrol do {
         private _group = createGroup btc_enemy_side;

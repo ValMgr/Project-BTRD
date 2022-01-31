@@ -104,8 +104,8 @@ _action = ["Place", localize "STR_ACE_Dragging_Carry", "\z\ace\addons\dragging\U
 {[_x, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;} forEach btc_log_def_placeable;
 
 //Hospital
-_action = ["Heal", localize "STR_BTC_HAM_ACTION_HOSPITAL_HEAL", "\A3\ui_f\data\igui\cfg\simpleTasks\types\heal_ca.paa", {[btc_hospital, 50] call btc_fnc_hospital_heal}, {true}] call ace_interact_menu_fnc_createAction;
-[btc_hospital, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+_action = ["Heal", localize "STR_BTC_HAM_ACTION_HOSPITAL_HEAL", "\A3\ui_f\data\igui\cfg\simpleTasks\types\heal_ca.paa", {[_target, 50] call btc_hospital_fnc_heal}, {true}] call ace_interact_menu_fnc_createAction;
+{[_x, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;} forEach (synchronizedObjects btc_hospital);
 
 //Shower
 _action = ["Shower_act", getText(configfile >> "CfgVehicles" >> "DeconShower_01_F" >> "UserActions" >> "Activate" >> "displayName"), "", {player playActionNow 'PutDown'; [_target, 1.5, 9] remoteExec ["BIN_fnc_deconShowerAnim", 0]}, {alive _target AND {_target animationSourcePhase 'valve_source' isEqualTo 0}}] call ace_interact_menu_fnc_createAction;

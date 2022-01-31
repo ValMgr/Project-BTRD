@@ -30,7 +30,6 @@ private _p_en_AA = ("btc_p_AA" call BIS_fnc_getParamValue) isEqualTo 1;
 private _p_en_tank = ("btc_p_tank" call BIS_fnc_getParamValue) isEqualTo 1;
 private _p_civ = "btc_p_civ" call BIS_fnc_getParamValue;
 private _p_civ_veh = "btc_p_civ_veh" call BIS_fnc_getParamValue;
-btc_p_agression = "btc_p_agression" call BIS_fnc_getParamValue;
 
 //<< IED options >>
 btc_p_ied = ("btc_p_ied" call BIS_fnc_getParamValue)/2;
@@ -61,16 +60,18 @@ private _p_skill = [
 ];
 
 //<< Spawn options >>
+btc_p_agression = "btc_p_agression" call BIS_fnc_getParamValue;
 btc_p_density_of_occupiedCity = ("btc_p_density_of_occupiedCity" call BIS_fnc_getParamValue)/100;
-btc_p_mil_group_ratio = ("btc_p_mil_group_ratio" call BIS_fnc_getParamValue)/100;
+btc_p_mil_group_ratio = ("btc_p_mil_group_ratio" call BIS_fnc_getParamValue)/100 + ((btc_p_agression*10) / 100);
 btc_p_mil_static_group_ratio = ("btc_p_mil_static_group_ratio" call BIS_fnc_getParamValue)/100;
 btc_p_civ_group_ratio = ("btc_p_civ_group_ratio" call BIS_fnc_getParamValue)/100;
 btc_p_animals_group_ratio = ("btc_p_animals_group_ratio" call BIS_fnc_getParamValue)/100;
 btc_p_mil_wp_houseDensity = ("btc_p_wp_houseDensity" call BIS_fnc_getParamValue)/100;
 btc_p_veh_armed_ho = ("btc_p_veh_armed_ho" call BIS_fnc_getParamValue) isEqualTo 1;
 btc_p_veh_armed_spawn_more = ("btc_p_veh_armed_spawn_more" call BIS_fnc_getParamValue) isEqualTo 1;
-btc_p_patrol_max = "btc_p_patrol_max" call BIS_fnc_getParamValue;
+btc_p_patrol_max = ("btc_p_patrol_max" call BIS_fnc_getParamValue) + btc_p_agression;
 btc_p_civ_max_veh = "btc_p_civ_max_veh" call BIS_fnc_getParamValue;
+
 
 //<< Gameplay options >>
 btc_p_sea = ("btc_p_sea" call BIS_fnc_getParamValue) isEqualTo 1;
@@ -717,13 +718,6 @@ if(!isNull btc_limited_arsenal) then {
     btc_limited_arsenal call jn_fnc_arsenal_init;
 };
 
-// Hospital
-if(!isNull btc_hospital) then {
-    [btc_hospital, false] call ace_dragging_fnc_setDraggable;
-    [btc_hospital, false] call ace_dragging_fnc_setCarryable;
-    [btc_hospital, -1] call ace_cargo_fnc_setSize;
-    [btc_hospital, -1] call ace_cargo_fnc_setSpace;
-};
 //Door
 btc_door_breaking_time = 20;
 
@@ -741,3 +735,12 @@ btc_body_bagTicketPlayer = 1;
 btc_body_enemyTicket = 1;
 
 btc_startDate = [2035, 6, 24, 12, 15];
+
+
+// Hospital
+{
+    [_x, false] call ace_dragging_fnc_setDraggable;
+    [_x, false] call ace_dragging_fnc_setCarryable;
+    [_x, -1] call ace_cargo_fnc_setSize;
+    [_x, -1] call ace_cargo_fnc_setSpace;
+} forEach (synchronizedObjects btc_hospital);
