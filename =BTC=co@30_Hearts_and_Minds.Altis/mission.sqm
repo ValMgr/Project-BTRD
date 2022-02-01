@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=251;
+		nextID=258;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8298.8301,77.356194,10052.302};
-		dir[]={0.66944015,-0.42485937,-0.60938036};
-		up[]={0.31418389,0.90525931,-0.28599644};
-		aside[]={-0.67315555,0,-0.73950088};
+		pos[]={8313.7773,101.99281,10109.977};
+		dir[]={-0.29453212,-0.55978274,-0.77453858};
+		up[]={-0.1989681,0.82863802,-0.52323097};
+		aside[]={-0.93470705,-1.3643876e-007,0.35543838};
 	};
 };
 binarizationWanted=0;
@@ -56,9 +56,9 @@ addons[]=
 	"A3_Signs_F",
 	"A3_Armor_F_Beta_APC_Tracked_01",
 	"A3_Weapons_F_Ammoboxes",
-	"A3_Structures_F_Orange_Humanitarian_Camps",
 	"A3_Structures_F_Enoch_Military_Camps",
-	"boxloader_cargo"
+	"boxloader_cargo",
+	"A3_Structures_F_Orange_Humanitarian_Camps"
 };
 class AddonsMetaData
 {
@@ -242,22 +242,22 @@ class AddonsMetaData
 		};
 		class Item25
 		{
-			className="A3_Structures_F_Orange";
-			name="Arma 3 Orange - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item26
-		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item26
 		{
 			className="boxloader_cargo";
 			name="boxloader_cargo";
+		};
+		class Item27
+		{
+			className="A3_Structures_F_Orange";
+			name="Arma 3 Orange - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -267,8 +267,8 @@ dlcs[]=
 	"Mark",
 	"Heli",
 	"Expansion",
-	"Orange",
-	"Contact"
+	"Contact",
+	"Orange"
 };
 randomSeed=2442963;
 class ScenarioData
@@ -1077,8 +1077,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8297.8428,75.941444,10056.275};
-						angles[]={-0,3.3448131,0};
+						position[]={8319.7979,74.781914,10101.083};
+						angles[]={0.045301005,0.78345388,6.2631893};
 					};
 					side="West";
 					flags=6;
@@ -1092,6 +1092,7 @@ class Mission
 					};
 					id=239;
 					type="B_officer_F";
+					atlOffset=-6.1035156e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1140,6 +1141,7 @@ class Mission
 			{
 			};
 			id=24;
+			atlOffset=-6.1035156e-005;
 		};
 		class Item13
 		{
@@ -1153,8 +1155,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8297.8555,75.941444,10049.898};
-						angles[]={-0,6.1749148,0};
+						position[]={8306.3311,76.029579,10067.183};
+						angles[]={6.2418771,2.5639269,0};
 					};
 					side="West";
 					flags=6;
@@ -1167,12 +1169,14 @@ class Mission
 					};
 					id=29;
 					type="B_Soldier_F";
+					atlOffset=-3.8146973e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=28;
+			atlOffset=-3.8146973e-005;
 		};
 		class Item14
 		{
@@ -1186,8 +1190,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8295.9307,75.941444,10049.88};
-						angles[]={-0,0.30771175,0};
+						position[]={8307.248,76.055107,10067.832};
+						angles[]={0.0026744273,2.4851489,6.2392135};
 					};
 					side="West";
 					flags=6;
@@ -1199,6 +1203,7 @@ class Mission
 					};
 					id=31;
 					type="B_engineer_F";
+					atlOffset=3.8146973e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1266,6 +1271,7 @@ class Mission
 			{
 			};
 			id=30;
+			atlOffset=3.8146973e-005;
 		};
 		class Item15
 		{
@@ -3455,8 +3461,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8296.5439,77.314568,10053.164};
-				angles[]={0,2.6428649,0};
+				position[]={8296.6006,75.940002,10053.136};
+				angles[]={0,5.7662416,0};
 			};
 			side="Empty";
 			flags=4;
@@ -3464,8 +3470,65 @@ class Mission
 			{
 				disableSimulation=1;
 			};
-			id=234;
-			type="Land_MedicalTent_01_white_IDAP_med_closed_F";
+			id=241;
+			type="Land_ConnectorTent_01_floor_dark_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item63
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8301.0361,76.375,10051.256};
+				angles[]={0,4.9725127,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="btc_hospital";
+			};
+			id=250;
+			type="Land_Boxloader_Case_Med";
+		};
+		class Item64
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8296.3252,77.314568,10052.981};
+				angles[]={0,5.7240047,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=255;
+			type="Land_MedicalTent_01_tropic_closed_F";
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3508,63 +3571,6 @@ class Mission
 				};
 				nAttributes=2;
 			};
-		};
-		class Item63
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8296.6006,75.940002,10053.136};
-				angles[]={0,2.6590614,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=241;
-			type="Land_ConnectorTent_01_floor_dark_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item64
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8301.251,76.375,10051.135};
-				angles[]={-0,4.9725127,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="btc_hospital";
-			};
-			id=250;
-			type="Land_Boxloader_Case_Med";
 		};
 	};
 };
