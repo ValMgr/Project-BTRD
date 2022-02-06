@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=265;
+		nextID=266;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8294.9482,77.370811,10054.532};
-		dir[]={0.62055188,-0.26898962,-0.73659492};
-		up[]={0.17331201,0.96314305,-0.2057208};
-		aside[]={-0.76478201,-9.1618858e-008,-0.64429903};
+		pos[]={8303.9541,119.87623,10037.961};
+		dir[]={0.25967962,-0.73188937,0.63001782};
+		up[]={0.27890807,0.68141413,0.67666668};
+		aside[]={0.92455244,-3.9071892e-009,-0.38108209};
 	};
 };
 binarizationWanted=0;
@@ -62,15 +62,14 @@ addons[]=
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"A3_Structures_F_Orange_Humanitarian_Camps",
 	"A3_Weapons_F_Ammoboxes",
-	"A3_Air_F_Orange_UAV_06",
 	"A3_Props_F_Enoch_Military_Camps",
-	"A3_Modules_F"
+	"A3_Air_F_Orange_UAV_06"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=28;
+		items=27;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -256,13 +255,6 @@ class AddonsMetaData
 		{
 			className="A3_Air_F_Orange";
 			name="Arma 3 Orange - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item27
-		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -706,7 +698,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=52;
+		items=51;
 		class Item0
 		{
 			dataType="Marker";
@@ -3233,45 +3225,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8295.2734,76.936356,10049.966};
-			};
-			side="Empty";
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=260;
-			type="Box_B_UAV_06_medical_F";
-			atlOffset=0.89600372;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item49
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={8295.2588,76.383888,10049.992};
 			};
 			side="Empty";
@@ -3306,19 +3259,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item50
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={8294.0605,75.983627,10048.463};
-				angles[]={6.2618537,0,6.2020311};
-			};
-			init="{" \n "   _x call btc_hospital_fnc_init;" \n "} forEach (synchronizedObjects this);";
-			id=264;
-			type="Logic";
-		};
-		class Item51
+		class Item49
 		{
 			dataType="Group";
 			side="West";
@@ -3330,8 +3271,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8296.584,75.941444,10052.646};
-						angles[]={-0,3.3291738,0};
+						position[]={8310.4844,75.93689,10066.757};
+						angles[]={0.0026520467,2.718143,0};
 					};
 					side="West";
 					flags=6;
@@ -3352,25 +3293,45 @@ class Mission
 			};
 			id=24;
 		};
-	};
-	class Connections
-	{
-		class LinkIDProvider
+		class Item50
 		{
-			nextID=1;
-		};
-		class Links
-		{
-			items=1;
-			class Item0
+			dataType="Object";
+			class PositionInfo
 			{
-				linkID=0;
-				item0=264;
-				item1=260;
-				class CustomData
+				position[]={8295.2881,76.936523,10049.981};
+				angles[]={-0,0.50484568,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call btc_hospital_fnc_init";
+				disableSimulation=1;
+			};
+			id=265;
+			type="Box_B_UAV_06_medical_F";
+			class CustomAttributes
+			{
+				class Attribute0
 				{
-					type="Sync";
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
 				};
+				nAttributes=1;
 			};
 		};
 	};
