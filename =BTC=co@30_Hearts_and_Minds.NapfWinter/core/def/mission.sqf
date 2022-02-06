@@ -1,8 +1,8 @@
 
 btc_version = [
     1,
-    21.1,
-    9
+    22,
+    0
 ];
 diag_log format (["=BTC= HEARTS AND MINDS VERSION %1.%2.%3"] + btc_version);
 
@@ -713,11 +713,6 @@ btc_units_owners = [];
 
 btc_player_type = ["SoldierWB", "SoldierEB", "SoldierGB"] select ([west, east, independent] find btc_player_side);
 
-// Limited arsenal
-if(!isNull btc_limited_arsenal) then {
-    btc_limited_arsenal call jn_fnc_arsenal_init;
-};
-
 //Door
 btc_door_breaking_time = 20;
 
@@ -736,11 +731,7 @@ btc_body_enemyTicket = 1;
 
 btc_startDate = [2035, 6, 24, 12, 15];
 
-
-// Hospital
-{
-    [_x, false] call ace_dragging_fnc_setDraggable;
-    [_x, false] call ace_dragging_fnc_setCarryable;
-    [_x, -1] call ace_cargo_fnc_setSize;
-    [_x, -1] call ace_cargo_fnc_setSpace;
-} forEach (synchronizedObjects btc_hospital);
+// Limited arsenal
+if(!isNull btc_limited_arsenal) then {
+    btc_limited_arsenal call jn_fnc_arsenal_init;
+};

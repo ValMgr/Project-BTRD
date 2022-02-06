@@ -70,7 +70,6 @@ if (isServer) then {
     btc_db_fnc_saveObjectStatus = compileScript ["core\fnc\db\saveObjectStatus.sqf"];
     btc_db_fnc_loadCargo = compileScript ["core\fnc\db\loadcargo.sqf"];
     btc_db_fnc_autoRestart = compileScript ["core\fnc\db\autoRestart.sqf"];
-    btc_db_fnc_add_veh = compileScript ["core\fnc\db\add_veh.sqf"];
     btc_db_fnc_setTurretMagazines = compileScript ["core\fnc\db\setTurretMagazines.sqf"];
 
     //DELAY
@@ -218,8 +217,7 @@ if (isServer) then {
     btc_veh_fnc_respawn = compileScript ["core\fnc\veh\respawn.sqf"];
     btc_veh_fnc_propertiesGet = compileScript ["core\fnc\veh\propertiesGet.sqf"];
     btc_veh_fnc_propertiesSet = compileScript ["core\fnc\veh\propertiesSet.sqf"];
-    btc_veh_fnc_addVehFromSQM = compileScript ["core\fnc\veh\addVehFromSQM.sqf"];
-    btc_veh_fnc_addRespawnableFromSQM = compileScript ["core\fnc\veh\addRespawnableFromSQM.sqf"];
+    btc_veh_fnc_add = compileScript ["core\fnc\veh\add.sqf"];
 };
 
 /////////////////////CLIENT AND SERVER\\\\\\\\\\\\\\\\\\\\\
@@ -411,18 +409,14 @@ if (!isDedicated) then {
     btc_task_fnc_abort = compileScript ["core\fnc\task\abort.sqf"];
 
     //TOW
-    btc_fnc_tow_ropeCreate = compile preprocessFileLineNumbers "core\fnc\tow\ropeCreate.sqf";
-    btc_fnc_tow_hitch_points = compile preprocessFileLineNumbers "core\fnc\tow\hitch_points.sqf";
-    btc_fnc_tow_unhook = compile preprocessFileLineNumbers "core\fnc\tow\unhook.sqf";
-    btc_fnc_tow_unwind = compile preprocessFileLineNumbers "core\fnc\tow\unwind.sqf";
-    btc_fnc_tow_check = compile preprocessFileLineNumbers "core\fnc\tow\check.sqf";
     btc_tow_fnc_ropeCreate = compileScript ["core\fnc\tow\ropeCreate.sqf"];
     btc_tow_fnc_hitch_points = compileScript ["core\fnc\tow\hitch_points.sqf"];
     btc_tow_fnc_unhook = compileScript ["core\fnc\tow\unhook.sqf"];
     btc_tow_fnc_check = compileScript ["core\fnc\tow\check.sqf"];
-    
+
     //HOSPITAL
-    btc_fnc_hospital_heal = compile preprocessFileLineNumbers "core\fnc\hospital\heal.sqf";
+    btc_hospital_fnc_init = compileScript ["core\fnc\hospital\init.sqf"];
+    btc_hospital_fnc_heal = compileScript ["core\fnc\hospital\heal.sqf"];
 };
 
 /////////////////////HEADLESS\\\\\\\\\\\\\\\\\\\\\
