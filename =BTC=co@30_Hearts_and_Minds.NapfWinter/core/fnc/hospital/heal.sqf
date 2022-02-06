@@ -1,6 +1,6 @@
 
 /* ----------------------------------------------------------------------------
-Function: btc_fnc_hospital_heal
+Function: btc_hospital_fnc_heal
 
 Description:
     Heal players around
@@ -22,10 +22,10 @@ Author:
 ---------------------------------------------------------------------------- */
 
 params [
-    ["_box", btc_hospital, [objNull]],
+    ["_box", objNull, [objNull]],
     ["_area", 100, [0]]
 ];
 
 
-private _nearestPlayer = ([allPlayers,[],{_box distance _x},"ASCEND"]call BIS_fnc_sortBy);
+private _nearestPlayer = ([allPlayers,[],{_box distance _x},"ASCEND"] call BIS_fnc_sortBy);
 { [objNull, _x] call ace_medical_treatment_fnc_fullHeal } forEach _nearestPlayer;
