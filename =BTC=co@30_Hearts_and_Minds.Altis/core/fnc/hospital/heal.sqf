@@ -1,6 +1,6 @@
 
 /* ----------------------------------------------------------------------------
-Function: btc_fnc_hospital_heal
+Function: btc_hospital_fnc_heal
 
 Description:
     Heal players around
@@ -22,7 +22,7 @@ Author:
 ---------------------------------------------------------------------------- */
 
 params [
-    ["_box", btc_hospital, [objNull]],
+    ["_box", objNull, [objNull]],
     ["_area", 100, [0]]
 ];
 

@@ -415,7 +415,8 @@ if (!isDedicated) then {
     btc_tow_fnc_check = compileScript ["core\fnc\tow\check.sqf"];
 
     //HOSPITAL
-    btc_fnc_hospital_heal = compile preprocessFileLineNumbers "core\fnc\hospital\heal.sqf";
+    btc_hospital_fnc_init = compileScript ["core\fnc\hospital\init.sqf"];
+    btc_hospital_fnc_heal = compileScript ["core\fnc\hospital\heal.sqf"];
 };
 
 /////////////////////HEADLESS\\\\\\\\\\\\\\\\\\\\\
