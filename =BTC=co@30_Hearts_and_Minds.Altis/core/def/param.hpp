@@ -75,7 +75,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_RESP_TICKETSHARE"]);
         values[]={0,1};
         texts[]={$STR_BTC_HAM_RESP_SAMEFACTION, $STR_BTC_HAM_RESP_NOTSHARE};
-        default = 1;
+        default = 0;
     };
     class btc_p_body_timeBeforeShowMarker { // Time before showing marker of dead player's body:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_RESP_TIMEBEFORESHOWMARKER"]);

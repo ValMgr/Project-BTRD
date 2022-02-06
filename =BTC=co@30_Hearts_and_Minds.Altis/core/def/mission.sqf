@@ -701,3 +701,8 @@ btc_startDate = [2035, 6, 24, 12, 15];
 if(!isNull btc_limited_arsenal) then {
     btc_limited_arsenal call jn_fnc_arsenal_init;
 };
+
+
+// Todo : 
+//  - Remove ticket to player / team if civilian is killed by player
+//
