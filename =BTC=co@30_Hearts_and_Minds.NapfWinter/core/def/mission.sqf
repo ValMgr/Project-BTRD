@@ -456,27 +456,19 @@ btc_construction_array =
     [
         [
             //"Fortifications"
-            "Land_BagBunker_Small_F",
-            "Land_BagFence_Corner_F",
-            "Land_BagFence_End_F",
-            "Land_BagFence_Long_F",
-            "Land_BagFence_Round_F",
-            "Land_BagFence_Short_F",
-            "Land_HBarrier_1_F",
-            "Land_HBarrier_3_F",
-            "Land_HBarrier_5_F",
             "Land_HBarrierBig_F",
-            "Land_Razorwire_F",
-            "Land_CncBarrier_F",
-            "Land_CncBarrierMedium_F",
-            "Land_CncBarrierMedium4_F",
-            "Land_CncWall1_F",
-            "Land_CncWall4_F",
+            "Land_HBarrierWall_corridor_F",
+            "Land_HBarrier_1_F",
+            "Land_HBarrier_5_F",
+            "Land_HBarrierWall6_F",
+            "Land_HBarrierWall_corner_F",
+            "Land_HBarrierTower_F",
+            "Land_BagBunker_Small_F",
+            "Land_ConcreteHedgehog_01_F",
+            "Land_BarGate_F",
             "Land_Mil_ConcreteWall_F",
-            "Land_Mil_WallBig_4m_F",
-            "Land_Mil_WallBig_Corner_F",
-            "Land_PortableLight_double_F",
-            "Land_Pod_Heli_Transport_04_medevac_black_F"
+            "Land_Pod_Heli_Transport_04_medevac_black_F",
+            "Land_Boxloader_Fort_Helipad_Tarp_Mid"
         ],
         [
             //"Static"
@@ -518,6 +510,7 @@ btc_construction_array =
             //"Vehicle logistic"
             "ACE_Wheel",
             "ACE_Track",
+            "Land_RepairDepot_01_green_F",
             "B_Slingload_01_Ammo_F",
             "B_Slingload_01_Fuel_F"
         ] + (_allClassSorted select {_x isKindOf "FlexibleTank_base_F"})
@@ -650,54 +643,7 @@ switch (_p_en) do {
             };
             case 4: {
                 private _vhl_removed = ["LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi8AMTSh_vvsc"];
-
-                btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
-                btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
-            };
-            case 5: {
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi8AMTSh_vvsc"];
-
-                btc_type_motorized = btc_type_motorized + _vhl_added;
-                btc_type_motorized_armed = btc_type_motorized + _vh_added;
-            };
-        };
-    };
-    case "LOP_US" : {
-        switch (btc_p_agression) do {
-            case 0: {
-                private _vhl_removed = ["LOP_US_BTR60","LOP_US_BTR70","LOP_US_ZSU234","LOP_US_BMP1","LOP_US_BMP1D","LOP_US_BMP2",
-                "LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
-
-                btc_type_motorized = btc_type_motorized - _vhl_removed;
-                btc_type_motorized_armed = btc_type_motorized - _vhl_removed;
-            };
-            case 1: {
-                private _vhl_removed = ["LOP_US_BTR60","LOP_US_BTR70","LOP_US_ZSU234","LOP_US_BMP1","LOP_US_BMP1D","LOP_US_BMP2",
-                "LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv"];
-
-                btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
-                btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
-            };
-            case 2: {
-                private _vhl_removed = ["LOP_US_ZSU234","LOP_US_BMP1","LOP_US_BMP1D","LOP_US_BMP2",
-                "LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv"];
-
-                btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
-                btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
-            };
-            case 3: {
-                private _vhl_removed = ["LOP_US_BMP2","LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_ATGM_msv","rhsgref_BRDM2_msv"];
-
-                btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
-                btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
-            };
-            case 4: {
-                private _vhl_removed = ["LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi8AMTSh_vvsc"];
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi24V_vvsc","RHS_Mi8AMTSh_vvsc"];
 
                 btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
                 btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
@@ -720,28 +666,28 @@ btc_spect_range = 1000;
 btc_spect_updateOn = -1;
 
 //Rep
-btc_rep_bonus_cache = 100;
+btc_rep_bonus_cache = 50;
 btc_rep_bonus_civ_hh = 5;
-btc_rep_bonus_disarm = 20;
-btc_rep_bonus_hideout = 200;
-btc_rep_bonus_mil_killed = 0.35;
-btc_rep_bonus_IEDCleanUp = 10;
+btc_rep_bonus_disarm = 10;
+btc_rep_bonus_hideout = 100;
+btc_rep_bonus_mil_killed = 0.25;
+btc_rep_bonus_IEDCleanUp = 5;
 btc_rep_bonus_removeTag = 3;
 btc_rep_bonus_removeTagLetter = 0.5;
 btc_rep_bonus_foodGive = 1;
 
-btc_rep_malus_civ_hd = - 2;
+btc_rep_malus_civ_hd = - 1;
 btc_rep_malus_animal_hd = - 1;
 btc_rep_malus_civ_killed = - 15;
 btc_rep_malus_animal_killed = - 5;
-btc_rep_malus_civ_suppressed = - 2.5;
+btc_rep_malus_civ_suppressed = - 0.5;
 btc_rep_malus_player_respawn = - 15;
 btc_rep_malus_veh_killed = - 25;
-btc_rep_malus_building_damaged = - 2;
-btc_rep_malus_building_destroyed = - 5;
+btc_rep_malus_building_damaged = - 1;
+btc_rep_malus_building_destroyed = - 6;
 btc_rep_malus_foodRemove = - btc_rep_bonus_foodGive;
-btc_rep_malus_breakDoor = - 4;
-btc_rep_malus_wheelChange = - 8;
+btc_rep_malus_breakDoor = - 2;
+btc_rep_malus_wheelChange = - 5;
 
 //Skill
 btc_AI_skill = _p_skill;
@@ -756,10 +702,9 @@ btc_door_breaking_time = 20;
 
 //Flag
 btc_flag_textures = [
-    "\A3\Data_F\Flags\flag_red_CO.paa",
-    "\A3\Data_F\Flags\flag_green_CO.paa",
-    "\A3\Data_F\Flags\flag_blue_CO.paa",
-    '#(argb,8,8,3)color(0.9,0.9,0,1)',
+    "core\img\bnchtaktik.paa",
+    "core\img\P2.paa",
+    "core\img\btrd.paa",
     "\A3\Data_F\Flags\flag_NATO_CO.paa"
 ];
 

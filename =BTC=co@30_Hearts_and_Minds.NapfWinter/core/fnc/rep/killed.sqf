@@ -38,10 +38,12 @@ if (isPlayer _instigator) then {
         [getPos _unit] call btc_rep_fnc_eh_effects;
     };
 
-    if (btc_p_respawn_ticketsShare) then {
-        [btc_player_side, -1] call btc_respawn_fnc_addTicket;
-    } else {
-        [_killer, -1, getPlayerUID _killer] call btc_respawn_fnc_addTicket;
+    if !(_isAgent) then {    
+        if (btc_p_respawn_ticketsShare) then {
+            [btc_player_side, -1] call btc_respawn_fnc_addTicket;
+        } else {
+            [_killer, -1, getPlayerUID _killer] call btc_respawn_fnc_addTicket;
+        };
     };
 
     if !(_isAgent) then {

@@ -35,8 +35,7 @@ private _backpack = backpack _unit;
 private _uniform = toLower uniform _unit;
 private _protection = 0;
 
-if (
-    [
+if ([
         "G_Respirator_base_F"
     ] findIf {_googles isKindOf [_x, _cfgGlasses]} > -1
 ) then {
@@ -52,10 +51,11 @@ if (
             "SE_M17",
             "Hamster_PS",
             "SE_S10",
-            "MK502"
+            "MK502",
+            "G_mas_usm_gasmask"
         ] findIf {_googles isKindOf [_x, _cfgGlasses]} > -1
     ) then {
-        _protection = _protection + 0.3;
+        _protection = _protection + 0.35;
     };
 };
 if (
@@ -78,7 +78,8 @@ if (_uniform isNotEqualTo "") then {
     _protection = _protection + 0.4;
     if (
         [
-            "cbrn"
+            "cbrn",
+            "U_mas_usm_B_suite_veg"
         ] findIf {_x in _uniform} > -1
     ) then {
         _protection = _protection + 0.2;

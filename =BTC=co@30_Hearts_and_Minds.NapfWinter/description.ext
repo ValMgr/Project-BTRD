@@ -1,7 +1,7 @@
-loadScreen = "core\img\btrd.paa";
+loadScreen = "core\img\small_banner.paa";
 author = "ZartaK40, NeoGold & les BTRD";
-onLoadName = "LES BTRD FONT DU SKI";
-onLoadMission = "Playtest 28/01/2022 - Tests globaux.";
+onLoadName = "Opération Steel Wind";
+onLoadMission = "Les BTRD font du ski dans le Donbass.";
 enabledebugconsole = 1;
 
 #include "core\fnc\common\dlg.hpp"
