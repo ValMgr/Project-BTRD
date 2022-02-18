@@ -468,19 +468,19 @@ btc_construction_array =
             "Land_BarGate_F",
             "Land_Mil_ConcreteWall_F",
             "Land_Pod_Heli_Transport_04_medevac_black_F",
-            "Land_Boxloader_Fort_Helipad_Tarp_Mid"
+            "Land_Boxloader_Fort_Helipad_Tarp_Mid",
+            "Land_Portablelight_02_quad_olive_F",
+            "Land_Portablelight_02_single_folded_olive_F"
         ],
         [
             //"Static"
-        ] + (_allClassSorted select {(
-            _x isKindOf "GMG_TriPod" ||
-            {_x isKindOf "StaticMortar"} ||
-            {_x isKindOf "HMG_01_base_F"} ||
-            {_x isKindOf "AA_01_base_F"} ||
-            {_x isKindOf "AT_01_base_F"}) && {
-                getNumber (_cfgVehicles >> _x >> "side") isEqualTo ([east, west, independent, civilian] find btc_player_side)
-            }
-        }),
+            "RHS_M2StaticMG_USMC_WD",
+            "RHS_M2StaticMG_MiniTripod_USMC_WD",
+            "RHS_TOW_TriPod_USMC_WD",
+            "RHS_MK19_TriPod_USMC_WD",
+            "RHS_Stinger_AA_pod_USMC_WD",
+            "RHS_M252_USMC_WD"
+        ], 
         [
             //"Ammobox"
             "Land_WoodenBox_F"
@@ -636,20 +636,20 @@ switch (_p_en) do {
             };
             case 3: {
                 private _vhl_removed = ["LOP_US_BMP2","LOP_US_BMP2D","LOP_US_BM21","LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_ATGM_msv","rhsgref_BRDM2_msv"];
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_ATGM_msv","rhsgref_BRDM2_msv","RHS_Mi8MTV3_vdv"];
 
                 btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
                 btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
             };
             case 4: {
                 private _vhl_removed = ["LOP_US_T72BA","LOP_US_T72BB","LOP_US_T72BC","LOP_US_2S1"];
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi24V_vvsc","RHS_Mi8AMTSh_vvsc"];
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi8AMTSh_vvsc","RHS_Mi24V_vvsc"];
 
                 btc_type_motorized = btc_type_motorized - _vhl_removed + _vhl_added;
                 btc_type_motorized_armed = btc_type_motorized - _vhl_removed + _vh_added;
             };
             case 5: {
-                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi8AMTSh_vvsc"];
+                private _vhl_added = ["rhs_tigr_sts_msv","rhs_tigr_m_msv","rhs_tigr_msv","rhsgref_BRDM2_msv","rhsgref_BRDM2_ATGM_msv","RHS_Mi8MTV3_vdv","RHS_Mi8AMTSh_vvsc","RHS_Mi24V_vvsc","RHS_Su25SM_vvsc","rhs_t80um"];
 
                 btc_type_motorized = btc_type_motorized + _vhl_added;
                 btc_type_motorized_armed = btc_type_motorized + _vh_added;
@@ -702,10 +702,12 @@ btc_door_breaking_time = 20;
 
 //Flag
 btc_flag_textures = [
-    "core\img\bnchtaktik.paa",
-    "core\img\P2.paa",
-    "core\img\btrd.paa",
-    "\A3\Data_F\Flags\flag_NATO_CO.paa"
+    "core\img\grp\spartan_B.paa",
+    "core\img\grp\spartan_V.paa",
+    "core\img\grp\spartan_R.paa",
+    "core\img\grp\Hades_R.paa",
+    "core\img\grp\Hades_V.paa",
+    "core\img\grp\Hades_B.paa"
 ];
 
 //Respawn
