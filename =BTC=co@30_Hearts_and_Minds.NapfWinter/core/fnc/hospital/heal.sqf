@@ -23,7 +23,7 @@ Author:
 
 params [
     ["_box", objNull, [objNull]],
-    ["_area", 100, [0]]
+    ["_area", 5, [0]]
 ];
 
 
