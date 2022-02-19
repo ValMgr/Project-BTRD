@@ -434,7 +434,7 @@ btc_type_hazmat = ["HazmatBag_01_F", "Land_MetalBarrel_F"] + (_allClassSorted se
 });
 
 //Containers
-btc_containers_mat = ["Land_Cargo20_military_green_F", "Land_Cargo40_military_green_F"];
+btc_containers_mat = ["Land_Cargo20_military_green_F", "Land_Cargo40_military_green_F", "B_Slingload_01_Cargo_F"];
 
 //Player
 btc_player_side = west;

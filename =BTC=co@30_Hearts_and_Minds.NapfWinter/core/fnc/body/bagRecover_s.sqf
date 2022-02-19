@@ -39,19 +39,18 @@ if (_ticket isEqualTo 0) exitWith {
 };
 [22] remoteExecCall ["btc_fnc_show_hint", remoteExecutedOwner];
 
-if([str btc_player_side, [btc_player_side] call BIS_fnc_respawnTickets] < 50) then {
-    if (btc_p_respawn_ticketsShare) then {
-        [btc_player_side, _ticket] call btc_respawn_fnc_addTicket;
+if (btc_p_respawn_ticketsShare) then {
+    [btc_player_side, _ticket] call btc_respawn_fnc_addTicket;
+} else {
+    if (_UID isNotEqualTo "") then {
+        private _player = _UID call BIS_fnc_getUnitByUID;
+        [_player, _ticket, _UID] call btc_respawn_fnc_addTicket;
     } else {
-        if (_UID isNotEqualTo "") then {
-            private _player = _UID call BIS_fnc_getUnitByUID;
-            [_player, _ticket, _UID] call btc_respawn_fnc_addTicket;
-        } else {
-            private _players = (units btc_player_side) select {isPlayer _x};
-            {
-                [_x, _ticket, getPlayerUID _x] call btc_respawn_fnc_addTicket;
-            } forEach _players;
-        };
+        private _players = (units btc_player_side) select {isPlayer _x};
+        {
+            [_x, _ticket, getPlayerUID _x] call btc_respawn_fnc_addTicket;
+        } forEach _players;
     };
 };
+
 _bodyBag call CBA_fnc_deleteEntity;

@@ -99,7 +99,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_FAC_EAGRE"]);
         values[]={-1,0,1,2,3,4,5};
         texts[]={$STR_DISABLED, "0","1","2","3","4","5"};
-        default = 0;
+        default = 1;
     };
     class btc_p_en { // Enemy type:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_FAC_ETYPE"]);
