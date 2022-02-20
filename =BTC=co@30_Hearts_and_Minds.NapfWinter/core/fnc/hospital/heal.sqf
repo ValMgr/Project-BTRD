@@ -23,9 +23,9 @@ Author:
 
 params [
     ["_box", objNull, [objNull]],
-    ["_area", 5, [0]]
+    ["_area", 10, [0]]
 ];
 
 
-private _nearestPlayer = ([allPlayers,[],{(_box distance _x) < _area},"ASCEND"] call BIS_fnc_sortBy);
+private _nearestPlayer = ([allPlayers,[],{(_box distance _x) < _area},"ASCEND"]call BIS_fnc_sortBy);
 { [objNull, _x] call ace_medical_treatment_fnc_fullHeal } forEach _nearestPlayer;
