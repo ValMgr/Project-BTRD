@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=296;
+		nextID=298;
 	};
 	class Camera
 	{
 		pos[]={14260.44,49.209206,17021.494};
-		dir[]={0.82800496,-0.26318312,-0.49516538};
-		up[]={0.2258966,0.96474105,-0.13509098};
-		aside[]={-0.51325911,3.3713877e-007,-0.85826278};
+		dir[]={0.41041625,-0.43401951,-0.80201805};
+		up[]={0.19772579,0.90089577,-0.38638699};
+		aside[]={-0.89023352,1.4336547e-007,-0.45555991};
 	};
 };
 binarizationWanted=0;
@@ -8520,6 +8520,24 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -8534,24 +8552,6 @@ class CustomAttributes
 						};
 					};
 					value=1;
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
 				};
 			};
 		};
@@ -10748,7 +10748,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={14334.736,18.610041,16857.381};
-				angles[]={0,5.6277561,-0};
+				angles[]={0,5.6277561,0};
 			};
 			side="Empty";
 			flags=5;
@@ -10789,7 +10789,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={14349.507,18.802654,16838.211};
-				angles[]={0,5.6277561,-0};
+				angles[]={0,5.6277561,0};
 			};
 			side="Empty";
 			flags=1;
@@ -14429,7 +14429,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={14359.717,15.547933,16819.504};
-				angles[]={0,3.8386488,-0};
+				angles[]={0,3.8386488,0};
 			};
 			side="Empty";
 			flags=5;
@@ -35639,7 +35639,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14405.946,21.158779,16970.891};
-						angles[]={-0,3.997921,0};
+						angles[]={0,3.997921,0};
 					};
 					side="Empty";
 					flags=4;

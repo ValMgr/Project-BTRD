@@ -27,5 +27,5 @@ params [
 ];
 
 
-private _nearestPlayer = ([allPlayers,[],{(_box distance _x) < _area},"ASCEND"]call BIS_fnc_sortBy);
+private _nearestPlayer = ([allPlayers,[],{_box distance _x},"ASCEND", {(_box distance _x) < _area}]call BIS_fnc_sortBy);
 { [objNull, _x] call ace_medical_treatment_fnc_fullHeal } forEach _nearestPlayer;
